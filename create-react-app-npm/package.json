@@ -55,7 +55,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "lib": "babel src/node_modules --out-dir lib --copy-files",
+    "lib": "babel --plugins @babel/transform-react-jsx src/node_modules --out-dir lib --copy-files",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -118,6 +118,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3"
+    "@babel/cli": "^7.2.3",
+    "@babel/plugin-transform-react-jsx": "^7.3.0"
   }
 }
