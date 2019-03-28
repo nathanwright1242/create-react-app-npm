@@ -4,18 +4,21 @@ Create npm packages with create-react-app, this is based on the tutorial provide
 
 # Here are the exact steps I followed:
 
-1. npx create-react-app create-react-app-npm
-2. cd create-react-app-npm
-3. npm run eject (yarn run eject)
-4. Install babel's command line interface: 
-    - npm i --save-dev @babel/cli
+1. ```npx create-react-app create-react-app-npm```
+2. ```cd create-react-app-npm```
+3. ```npm run eject``` or ```yarn run eject```
+4. Install babel's command line interface as well as babel's plugin to transform jsx. This is necessary for running your custom "lib" command described
+later in the tutorial to compile and transpile your custom components so they can be shared with others.
+    - ```npm install --save-dev @babel/cli```
+    - ```npm install --save-dev @babel/plugin-transform-react-jsx```
+
 5. Don't add a .babelrc in your project root, ejecting from create-react-app will take care of your babel set-up
-6. Added the "lib" command as an npm run command within the "scripts" section of my package.json: 
-    - "lib": "babel src/node_modules --out-dir lib --copy-files",
+6. Added the "lib" command as an npm run command within the "scripts" section of my package.json. Note: this has changed since the writting of this tutorial. Babel 6 and up no longer has any native transforms for React, so you need to use the @babel/transform-react-jsx plugin
+    - ```"lib": "babel --plugins @babel/transform-react-jsx src/node_modules --out-dir lib --copy-files",```
 7. I skipped adding the CSS loader since CSS is properly handled by create-react-app as the time of this writing
 8. Create the necessary folder structure for your module:
-    - cd src
-    - mkdir -p node_modules/components/YourComponent
+    - ```cd src```
+    - ```mkdir -p node_modules/components/YourComponent```
 9. Add a package.json, your custom styling, and actual component code for each custom component you create. For me I followed the tutorial and 
 simply created a single component called YourComponent. Here is my relevant code more or less verbatim from the tutorial:
 
@@ -145,3 +148,6 @@ This is within the options object and before the plugins array, for reference:
 #### If that didn't make sense just copy paste my webpack.config.js.
 
 Ok now rerun your application with a ```npm run start``` You should see 1 on http://localhost:3000/ and your application should successfully compile.
+
+
+npm install --save-dev @babel/plugin-transform-react-jsx
