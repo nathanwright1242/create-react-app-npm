@@ -13,7 +13,7 @@ later in the tutorial to compile and transpile your custom components so they ca
     - ```npm install --save-dev @babel/plugin-transform-react-jsx```
 
 5. Don't add a .babelrc in your project root, ejecting from create-react-app will take care of your babel set-up
-6. Added the "lib" command as an npm run command within the "scripts" section of my package.json. Note: this has changed since the writting of this tutorial. Babel 6 and up no longer has any native transforms for React, so you need to use the @babel/transform-react-jsx plugin
+6. Add the "lib" command as an npm run command within your "scripts" section of the package.json. Note: this has changed since the writting of this tutorial. Babel 6 and up no longer have any native transforms for React, so you need to use the @babel/transform-react-jsx plugin for this transformation.
     - ```"lib": "babel --plugins @babel/transform-react-jsx src/node_modules --out-dir lib --copy-files",```
 7. I skipped adding the CSS loader since CSS is properly handled by create-react-app as the time of this writing
 8. Create the necessary folder structure for your module:
@@ -66,7 +66,8 @@ export default YourComponent
 export { default as YourComponent } from './components/YourComponent'
 ```
 
-11. Edit src/App.js as stated in the tutorial:
+11. Edit ```src/App.js``` as stated in the tutorial:
+####src/App.js
 ```javascript
 import React from 'react'
 import YourComponent from 'components/YourComponent'
@@ -162,6 +163,7 @@ look into it.
 
 Author
 ------
-I can be reach at the following if you need help (no guarantees since I try to limit email time)
+I can be reach at the following if you need help:<br/>
 [Nathan Wright](https://github.com/nathanwright1242/create-react-app-npm)
+<br/>
 Email: nathanwright1242@gmail.com
