@@ -149,5 +149,19 @@ This is within the options object and before the plugins array, for reference:
 
 Ok now rerun your application with a ```npm run start``` You should see 1 on http://localhost:3000/ and your application should successfully compile.
 
+You shouldn't need to add  the ```.gitignore``` file since create-react-app provided you with one, I'd just modify that one to your needs.
 
-npm install --save-dev @babel/plugin-transform-react-jsx
+13. Compile your custom library components with your custom 'lib' command: ```npm run lib``` or ```yarn run lib```. See steps 4 and 6 if you
+have issues with compiling your library as the tutorial is no longer relevant in this respect since the babel-cli and babel jsx transform plugin are 
+now necessary. Additionally, you need to modify your custom 'lib' command. Copy my package.json file if this doesn't make sense and issue a ```npm i```
+to ensure you have all the necessary libs.
+
+14. The rest of the tutorial is just comitting your code to source control and publishing on npmjs and should work the same as stated. If not I can take a
+look into it.
+
+
+Author
+------
+I can be reach at the following if you need help (no guarantees since I try to limit email time)
+[Nathan Wright](https://github.com/nathanwright1242/create-react-app-npm)
+Email: nathanwright1242@gmail.com
