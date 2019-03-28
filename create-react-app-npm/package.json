@@ -55,6 +55,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "lib": "babel src/node_modules --out-dir lib --copy-files",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -115,5 +116,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3"
   }
 }
