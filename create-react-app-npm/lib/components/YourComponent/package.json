@@ -1,5 +1,13 @@
 {
-    "private": true,
-    "name": "YourComponent",
-    "main": "./YourComponent"
+    "name": "@wright1242/yourcomponent",
+    "version": "1.0.0",
+    "main": "./YourComponent",
+    "license": "MIT",
+    "repository": "nathanwright1242/create-react-app-npm",
+    "keywords": [
+        "Custom React Component",
+        "npm",
+        "package",
+        "nathanwright1242"
+    ]
 }
